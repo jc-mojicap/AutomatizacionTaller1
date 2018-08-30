@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taller1:NoorApp
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:taller1="http://www.example.org/taller1"
+    xsi:schemaLocation="http://www.example.org/taller1 taller1.ecore"
+    nombreApp="ContactosApp">
+  <entidades
+      nombre="Persona">
+    <detalles
+        nombre="Nombre"/>
+    <detalles
+        nombre="Telefono"/>
+    <detalles
+        nombre="Email"/>
+    <relacion
+        entidad="//@entidades.1"
+        esDebil="true"/>
+  </entidades>
+  <entidades
+      nombre="Grupo">
+    <detalles
+        nombre="Nombre"/>
+  </entidades>
+</taller1:NoorApp>

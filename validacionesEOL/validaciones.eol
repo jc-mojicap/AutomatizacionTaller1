@@ -1,15 +1,26 @@
-// Un entity que este como detalle en una relaci贸n maestro detalle/fuerte no puede ser maestro de otra relaci贸n
+// 1. Un entity que este como detalle en una relaci贸n maestro detalle/fuerte no puede ser maestro de otra relaci贸n
 operation Relacion detailIsNotMaster():Boolean{
-	return self.esDebil = false and self.entidad.relaci髇.Size() = 0;
+	return self.esDebil = false and self.entidad.relacion.Size() = 0;
 }
 
-// Un entity que este como detalle en una relaci贸n maestro detalle/fuerte no puede ser detalle de otra relaci贸n
+operation Entidad detailIsNotMaster():Boolean{
+	for (e in self.all){
+		for(r in e.relacion.select(rel|rel.isDebil = false)){
+			if (r.entidad.relacion.all.notEmpty()){
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+// 2. Un entity que este como detalle en una relaci贸n maestro detalle/fuerte no puede ser detalle de otra relaci贸n
 operation Relacion detailIsNotDetail():Boolean{
 	var relaciones = Relacion.allsInstances->select(r|r.entidad.name = self.entidad.name);
-	return self.esDebil = false and relaciones.Size() = 1; // Solo puede haber una existente, la que tiene la relaci髇 fuerte
+	return self.esDebil = false and relaciones.Size() = 1; // Solo puede haber una existente, la que tiene la relaci贸n fuerte
 }
 
-// En el modelo, no pueden repetirse los nombres de Entities
+// 3. En el modelo, no pueden repetirse los nombres de Entities
 operation Entidad notEqualEntitiesNames():Boolean{
 	var entidades = Entidad.allInstances;
 	for (e in entidades){
@@ -19,7 +30,7 @@ operation Entidad notEqualEntitiesNames():Boolean{
 	return true;
 }
 
-// En un entity, no pueden repetirse los nombres de atributos
+// 4. En un entity, no pueden repetirse los nombres de atributos
 operation Entidad notEqualEntitiesNames():Boolean{
 	var atributos = self.detalles;
 	
@@ -30,8 +41,32 @@ operation Entidad notEqualEntitiesNames():Boolean{
 	return true;
 }
 
-// En un entity, debe haber estrictamente un atributo marcado como "es t铆tulo". 
+// 5. En un entity, debe haber estrictamente un atributo marcado como "es t铆tulo". 
+operation Entidad hasTitle():Boolean{
+	return self.atributos.select(a | a.isTitle = true).size()=1;
+}
 
-// En un entity, el atributo marcado como "es t铆tulo" debe ser marcado como "es requerido"
+// 6. En un entity, el atributo marcado como "es t铆tulo" debe ser marcado como "es requerido"
+operation Entidad titleIsRequired():Boolean{
+	var isRequired = true;
+	for (a in self.atributos -> select(a1|a1.esTitulo = true)){
+		if (a.esRequerido = false){
+			isRequired = false;
+		}
+	}
+	return isRequired;
+}
 
-// En un entity, debe haber al menos un atributo marcado como "es visible en lista", dicho atributo no debe ser al mismo tiempo marcado con "es t铆tulo"
+// 7. En un entity, debe haber al menos un atributo marcado como "es visible en lista", 
+// dicho atributo no debe ser al mismo tiempo marcado con "es t铆tulo"
+operation Entidad isVisibleCannotBeTitle():Boolean{
+	if (self.atributos.select(att | att.esVisibleEnLista = true).isEmpty){
+		return false;
+	}
+	for (a in self.atributos.select(att | att.esVisibleEnLista = true)){
+		if (a.esTitulo = true){
+			return false;
+		}
+	}
+	return true;
+}
