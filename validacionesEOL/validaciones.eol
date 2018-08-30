@@ -1,0 +1,15 @@
+// Un entity que este como detalle en una relación maestro detalle/fuerte no puede ser maestro de otra relación
+operation Entidad detailIsNotMaster():Boolean{
+	
+}
+// Un entity que este como detalle en una relación maestro detalle/fuerte no puede ser detalle de otra relación
+
+// En el modelo, no pueden repetirse los nombres de Entities
+
+// En un entity, no pueden repetirse los nombres de atributos
+
+// En un entity, debe haber estrictamente un atributo marcado como "es título". 
+
+// En un entity, el atributo marcado como "es título" debe ser marcado como "es requerido"
+
+// En un entity, debe haber al menos un atributo marcado como "es visible en lista", dicho atributo no debe ser al mismo tiempo marcado con "es título"
