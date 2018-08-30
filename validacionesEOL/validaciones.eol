@@ -1,12 +1,34 @@
 // Un entity que este como detalle en una relaci贸n maestro detalle/fuerte no puede ser maestro de otra relaci贸n
-operation Entidad detailIsNotMaster():Boolean{
-	
+operation Relacion detailIsNotMaster():Boolean{
+	return self.esDebil = false and self.entidad.relaci髇.Size() = 0;
 }
+
 // Un entity que este como detalle en una relaci贸n maestro detalle/fuerte no puede ser detalle de otra relaci贸n
+operation Relacion detailIsNotDetail():Boolean{
+	var relaciones = Relacion.allsInstances->select(r|r.entidad.name = self.entidad.name);
+	return self.esDebil = false and relaciones.Size() = 1; // Solo puede haber una existente, la que tiene la relaci髇 fuerte
+}
 
 // En el modelo, no pueden repetirse los nombres de Entities
+operation Entidad notEqualEntitiesNames():Boolean{
+	var entidades = Entidad.allInstances;
+	for (e in entidades){
+		if(entidades->select(ent|ent.nombre = self.nombre).Size() > 1)
+			return false;
+	}
+	return true;
+}
 
 // En un entity, no pueden repetirse los nombres de atributos
+operation Entidad notEqualEntitiesNames():Boolean{
+	var atributos = self.detalles;
+	
+	for (d in detalles){
+		if(detalles->select(dt|dt.nombre = d.nombre).Size() > 1)
+			return false;
+	}
+	return true;
+}
 
 // En un entity, debe haber estrictamente un atributo marcado como "es t铆tulo". 
 
