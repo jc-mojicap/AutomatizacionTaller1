@@ -19,7 +19,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Atributo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" ordered="false" unique="false"
-        eType="#//TipoAtributo" changeable="false"/>
+        eType="#//TipoAtributo"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="#//TipoAtributo"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPrimary" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>

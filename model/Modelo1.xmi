@@ -14,13 +14,16 @@
         nombre="Telefono"/>
     <detalles
         nombre="Email"/>
-    <relacion
-        entidad="//@entidades.1"
-        esDebil="true"/>
+    <detalles
+        nombre="esActivo"
+        valor="EBoolean"
+        isPrimary="true"/>
   </entidades>
   <entidades
       nombre="Grupo">
     <detalles
         nombre="Nombre"/>
+    <relacion
+        entidad="//@entidades.0"/>
   </entidades>
 </taller1:NoorApp>
