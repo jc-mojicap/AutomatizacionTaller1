@@ -5,6 +5,8 @@
     <semanticResources>taller1.genmodel</semanticResources>
     <semanticResources>NoorApp.xmi</semanticResources>
     <semanticResources>Modelo2.xmi</semanticResources>
+    <semanticResources>LibraryApp.xmi</semanticResources>
+    <semanticResources>../validacionesEOL/modelo1Validation.evl</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_zxr5MKHJEeil_e6fk-3bog">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_z3MrUKHJEeil_e6fk-3bog" name="taller1" repPath="#_z0f8oKHJEeil_e6fk-3bog">

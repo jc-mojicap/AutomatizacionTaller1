@@ -8,69 +8,25 @@
     colorBoton="Amarillo"
     colorBarra="Verde">
   <entidades
-      nombre="Novelas">
+      nombre="Categoria">
     <relacion
         entidad="//@entidades.1"
         esDebil="true"/>
-    <relacion
-        entidad="//@entidades.2"
-        esDebil="true"/>
   </entidades>
   <entidades
-      nombre="Cumbres Borrascosas">
+      nombre="Libro">
     <detalles
-        nombre="Autor Emily Jane Brontë"
+        nombre="Autor"
         isPrimary="true"/>
     <detalles
-        nombre="1847"
+        nombre="publicationYear"
         valor="EDate"
         isPrimary="true"/>
     <detalles
-        nombre="350 Paginas"
+        nombre="Paginas"
         valor="EInteger"/>
     <detalles
-        nombre="Calificacion 4"
+        nombre="Calificacion"
         valor="EInteger"/>
-  </entidades>
-  <entidades
-      nombre="Oliver Twist">
-    <detalles
-        nombre="Autor Charles Dickens"/>
-    <detalles
-        nombre="1838"
-        valor="EInteger"/>
-    <detalles
-        nombre="200 paginas"
-        valor="EInteger"/>
-    <detalles
-        nombre="Calificacion 4"/>
-  </entidades>
-  <entidades
-      nombre="Fantasia">
-    <relacion
-        entidad="//@entidades.4"/>
-  </entidades>
-  <entidades
-      nombre="El señor de los anillos - La comunidad del anillo">
-    <detalles
-        nombre="Autor JRR Tolkien"/>
-    <detalles
-        nombre="1954"
-        valor="EInteger"/>
-    <detalles
-        nombre="450 paginas"/>
-    <detalles
-        nombre="Calificacion 5"/>
-  </entidades>
-  <entidades
-      nombre="Harry Potter y la piedra filosofal">
-    <detalles
-        nombre="Autor JK Rowling"/>
-    <detalles
-        nombre="1997"/>
-    <detalles
-        nombre="240 paginas"/>
-    <detalles
-        nombre="Calificacion 4"/>
   </entidades>
 </taller1:NoorApp>

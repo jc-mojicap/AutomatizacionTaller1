@@ -1,0 +1,75 @@
+context modelo2Validation!Application {
+	
+	// 1. Un entity que este como detalle en una relación maestro detalle/fuerte no puede ser maestro de otra relación
+	critique detailIsNotMaster {
+    	//guard : self.name = 'Libro'
+    
+    	check : self.detailIsNotMaster()
+    
+    	message : "La entidad está presente como maestro y detalle en una relación fuerte: " + self.name  
+    
+	}
+	
+	// 2. Un entity que este como detalle en una relación maestro detalle/fuerte no puede ser detalle de otra relación
+	critique detailIsNotDetail {
+    	//guard : self.name = 'Hobbies'
+    
+    	check : self.detailIsNotDetail()
+    
+    	message : "La entidad está presente como maestro y detalle en una relación fuerte: " + self.name  
+    
+	}
+	
+	// 3. En el modelo, no pueden repetirse los nombres de Entities
+	critique notEqualEntitiesNames {
+    	//guard : self.name = 'Libro'
+    
+    	check : self.notEqualEntitiesNames()
+    
+    	message : "Entidades con nombre repetidos. Aplicación: " + self.name +", Entidad: " + self.entities.name  
+    
+	}
+	
+	// 4. En un entity, no pueden repetirse los nombres de atributos
+	critique notEqualEntitiesNames {
+    	//guard : self.name = 'Libro'
+    
+    	check : self.notEqualEntitiesNames()
+    
+    	message : "Atributos con mismo nombre en la entidad: " + self.name  
+    
+	}
+	
+	// 5. En un entity, debe haber estrictamente un atributo marcado como "es título". 
+	critique hasTitle {
+    	//guard : self.name = 'Libro'
+    
+    	check : self.hasTitle()
+    
+    	message : "La entidad: " + self.name + " no tiene un atributo título"  
+    
+	}
+	
+	// 6. En un entity, el atributo marcado como "es título" debe ser marcado como "es requerido"
+	critique titleIsRequired {
+    	//guard : self.name = 'Libro'
+    
+    	check : self.titleIsRequired()
+    
+    	message : "El atributo titulo debe estar marcado como requerido en la entidad: " + self.name  
+    
+	}
+	
+	// 7. En un entity, debe haber al menos un atributo marcado como "es visible en lista", 
+	// dicho atributo no debe ser al mismo tiempo marcado con "es título"
+	critique isVisibleCannotBeTitle {
+    	//guard : self.name = 'Libro'
+    
+    	check : self.isVisibleCannotBeTitle()
+    
+    	message : "Hay atributos marcados como título y visible en lista o no existe al menos un atributo visible en lista en la entidad: " + self.name  
+    
+	}
+		
+}
+
