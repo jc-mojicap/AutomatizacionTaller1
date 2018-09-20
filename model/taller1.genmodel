@@ -17,25 +17,28 @@
     </genEnums>
     <genClasses ecoreClass="taller1.ecore#//NoorApp">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller1.ecore#//NoorApp/entidades"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/nombreApp"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/colorTexto"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/colorBoton"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/colorBarra"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/nameApp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/textColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/buttonColor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//NoorApp/barColor"/>
     </genClasses>
     <genClasses ecoreClass="taller1.ecore#//Entidad">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Entidad/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Entidad/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller1.ecore#//Entidad/detalles"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference taller1.ecore#//Entidad/relacion"/>
     </genClasses>
     <genClasses ecoreClass="taller1.ecore#//Atributo">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/nombre"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/tipo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/valor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/isPrimary"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/isTitle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/isRequired"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Atributo/isVisibleInList"/>
     </genClasses>
     <genClasses ecoreClass="taller1.ecore#//Relacion">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference taller1.ecore#//Relacion/entidad"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Relacion/esDebil"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Relacion/isWeak"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute taller1.ecore#//Relacion/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

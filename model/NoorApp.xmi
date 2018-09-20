@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<taller1:NoorApp xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:taller1="http://www.example.org/taller1">
-  <entidades nombre="TODOs">
-    <detalles nombre="Ir a lavanderia"/>
-    <detalles nombre="Comprar viveres"/>
-    <detalles nombre="Jugar tennis"/>
-  </entidades>
-</taller1:NoorApp>
